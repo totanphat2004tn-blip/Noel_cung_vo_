@@ -437,9 +437,9 @@
 
             const cameraUtils = new Camera(video, {
                 onFrame: async () => {
-                    frameCnt++; if(frameCnt% !== 0) return; 
+                    frameCnt++; if(frameCnt%2 !== 0) return; 
                     await hands.send({image: video});
-                }, width: 480, height: 360
+                }, width: 640, height: 360
             });
             cameraUtils.start();
         }
