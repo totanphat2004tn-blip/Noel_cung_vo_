@@ -164,7 +164,7 @@
 
             renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setPixelRatio(1);
             container.appendChild(renderer.domElement);
 
             // Vandiep
@@ -437,7 +437,7 @@
 
             const cameraUtils = new Camera(video, {
                 onFrame: async () => {
-                    frameCnt++; if(frameCnt%6 !== 0) return; 
+                    frameCnt++; if(frameCnt%2 !== 0) return; 
                     await hands.send({image: video});
                 }, width: 640, height: 480
             });
