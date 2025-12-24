@@ -439,7 +439,7 @@
                 onFrame: async () => {
                     frameCnt++; if(frameCnt%2 !== 0) return; 
                     await hands.send({image: video});
-                }, width: 640, height: 360
+                }, width: 1280, height: 360
             });
             cameraUtils.start();
         }
