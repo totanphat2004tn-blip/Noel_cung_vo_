@@ -55,7 +55,7 @@
 <body>
     <div id="error-log"></div>
     <div id="ui-layer">
-        <div id="status" class="badge">🎄 Giang Sinh An Lanh 🎄</div>
+        <div id="status" class="badge">🎄 Giáng sinh an lành! 🎄</div>
         <div class="guide">
             🖐 <b>Xòe:</b> Bung Quà & Đèn &nbsp;|&nbsp; 👌 <b>Pinch:</b> Xem ảnh &nbsp;|&nbsp; ✊ <b>Nắm:</b> Thu cây
         </div>
@@ -133,9 +133,9 @@
         // 2. Vandiep
         // ==========================================
         const CONFIG = {
-            goldCount: 1000,    // Hạt vàng
+            goldCount: 1500,    // Hạt vàng
             redCount: 150,      // Số lượng đèn đỏ
-            giftCount: 80,     // Số lượng hộp quà
+            giftCount: 100,     // Số lượng hộp quà
             explodeRadius: 65,  
             photoOrbitRadius: 25,
             treeHeight: 70,
@@ -149,7 +149,7 @@
         
         let state = 'TREE'; 
         let selectedIndex = 0;
-        let handX = 1.0;
+        let handX = 1.5;
 
         // ==========================================
         // 3. Vandiep
@@ -431,15 +431,15 @@
                     }
                 } else {
                     state = 'TREE'; 
-                    statusDiv.innerText = "🎄 Giang Sinh An Lanh 🎄"; statusDiv.style.color = "#FFF";
+                    statusDiv.innerText = "🎄 Giáng sinh an lành! 🎄"; statusDiv.style.color = "#FFF";
                 }
             });
 
             const cameraUtils = new Camera(video, {
                 onFrame: async () => {
-                    frameCnt++; if(frameCnt%3 !== 0) return; 
+                    frameCnt++; if(frameCnt%6 !== 0) return; 
                     await hands.send({image: video});
-                }, width: 320, height: 240
+                }, width: 640, height: 480
             });
             cameraUtils.start();
         }
